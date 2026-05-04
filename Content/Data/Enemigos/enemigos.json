@@ -1,0 +1,67 @@
+[
+  {
+    "id": "casio",
+    "nombre": "Casio au Belona",
+    "casa": "Marte",
+    "fuerza": 20,
+    "tecnica": 18,
+    "hp": 120,
+    "notas": "Hermano de Julian. El mejor espadachín del Instituto.",
+    "dialogo_inicio": "casio_acusacion",
+    "dialogo_derrota": "",
+    "puede_unirse": true,
+    "flag_unido": "casio_aliado"
+  },
+  {
+    "id": "antonia",
+    "nombre": "Antonia au Severus-Julii",
+    "casa": "Marte",
+    "fuerza": 16,
+    "tecnica": 19,
+    "hp": 90,
+    "notas": "Traidora nata. Sacrificará a cualquier aliado para ascender.",
+    "dialogo_inicio": "antonia_traicion",
+    "dialogo_derrota": "",
+    "puede_unirse": false,
+    "flag_unido": ""
+  },
+  {
+    "id": "roque",
+    "nombre": "Roque au Fabii",
+    "casa": "Minerva",
+    "fuerza": 14,
+    "tecnica": 22,
+    "hp": 85,
+    "notas": "Poeta y estratega. Su mente supera con creces a su cuerpo.",
+    "dialogo_inicio": "roque_desafio",
+    "dialogo_derrota": "",
+    "puede_unirse": true,
+    "flag_unido": "roque_aliado"
+  },
+  {
+    "id": "quinn",
+    "nombre": "Quinn",
+    "casa": "Minerva",
+    "fuerza": 13,
+    "tecnica": 17,
+    "hp": 80,
+    "notas": "Leal hasta la médula. Una aliada que vale más que diez guerreros.",
+    "dialogo_inicio": "quinn_encuentro",
+    "dialogo_derrota": "",
+    "puede_unirse": true,
+    "flag_unido": "quinn_aliada"
+  },
+  {
+    "id": "tactus",
+    "nombre": "Tactus au Uth",
+    "casa": "Marte",
+    "fuerza": 17,
+    "tecnica": 12,
+    "hp": 100,
+    "notas": "Violento e impredecible. Solo la fuerza o el miedo lo someten.",
+    "dialogo_inicio": "tactus_confrontacion",
+    "dialogo_derrota": "",
+    "puede_unirse": true,
+    "flag_unido": "tactus_sometido"
+  }
+]

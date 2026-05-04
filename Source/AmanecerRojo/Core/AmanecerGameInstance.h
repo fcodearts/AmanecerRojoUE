@@ -77,6 +77,13 @@ public:
     UFUNCTION(BlueprintPure, Category="Flags")
     bool GetFlag(FName Flag) const { return Flags.Contains(Flag) && Flags[Flag]; }
 
+    // --- Guardado / Carga ---
+    UFUNCTION(BlueprintCallable, Category="Save")
+    void Guardar();
+
+    UFUNCTION(BlueprintCallable, Category="Save")
+    bool Cargar();
+
     // --- Utilidad ---
     UFUNCTION(BlueprintPure, Category="Stats")
     static UAmanecerGameInstance* Get(const UObject* WorldContext);

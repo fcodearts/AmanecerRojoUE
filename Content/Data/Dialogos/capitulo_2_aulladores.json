@@ -1,0 +1,231 @@
+{
+  "version": "1.0",
+  "escenas": {
+
+    "c2_inicio": {
+      "tipo": "narracion",
+      "texto": "Casa Marte se ha consolidado en las colinas del norte.\nHas sobrevivido El Paso. Has sobrevivido los primeros días.\nPero el Instituto no es un lugar donde se sobrevive — es un lugar donde se conquista o se perece.\n\nTus instintos Rojos te dicen que hay algo podrido en el corazón de tu propia Casa.\nTus instintos Dorados recién tallados te dicen que lo uses.\n\nAún no sabes cuál de los dos tiene razón.",
+      "siguiente": "sevro_aparece"
+    },
+
+    "sevro_aparece": {
+      "tipo": "narracion",
+      "texto": "Es la tercera guardia de la noche cuando lo ves por primera vez.\n\nPequeño para ser Dorado. Demasiado pequeño. Viste pieles de lobo que no deberían existir en el Instituto, y sus ojos brillan desde las sombras con una inteligencia hambrienta.\n\nHa estado observándote. Por cuánto tiempo, no puedes saberlo.\nEso, por sí solo, debería aterrarte.",
+      "siguiente": "sevro_habla"
+    },
+
+    "sevro_habla": {
+      "tipo": "dialogo",
+      "personaje": "Sevro au Barca",
+      "texto": "Llevas tres días mirando a Tito como si quisieras abrirle el pecho.\nYo llevo seis mirándote a ti.\n\nSé lo que eres, Darrow au Andromedus: el único en esta Casa que entiende que ganar esto no se trata de cuántos Casas puedes aplastar.\nSe trata de cuántos hombres pueden morir por ti... y cuántos matarías tú por ellos.\n\n¿Quieres saber cuántos mataría yo por ti?\nTodos. Absolutamente todos.",
+      "siguiente": "sevro_decision"
+    },
+
+    "sevro_decision": {
+      "tipo": "eleccion",
+      "texto": "Sevro te mira sin pestañear. Hay algo en él que no cuadra con ningún Dorado que hayas conocido — una ferocidad sin pretensión, una lealtad que parece anterior a cualquier razón.",
+      "opciones": [
+        {
+          "texto": "Aceptarlo. Alguien que ha sobrevivido solo en las sombras es exactamente lo que necesitas.",
+          "efectos": { "prestigio": 10, "conflicto_interno": 5, "flag": "sevro_aullador" },
+          "siguiente": "sevro_aceptado"
+        },
+        {
+          "texto": "Ponerlo a prueba antes. Las palabras son baratas en el Instituto.",
+          "efectos": { "prestigio": 8, "conflicto_interno": 8, "flag": "sevro_aullador" },
+          "siguiente": "sevro_prueba"
+        },
+        {
+          "texto": "Rechazarlo. No puedes confiar en alguien que te vigiló en secreto.",
+          "efectos": { "prestigio": -5, "conflicto_interno": -5 },
+          "siguiente": "sevro_rechazado"
+        }
+      ]
+    },
+
+    "sevro_aceptado": {
+      "tipo": "narracion",
+      "texto": "Le extiendes la mano. Sevro la mira un momento — sorprendido, quizás, de que alguien en el Instituto todavía use ese gesto.\nLuego la toma.\n\nSu apretón es como acero envuelto en piel de lobo.",
+      "efectos": { "prestigio": 5 },
+      "siguiente": "tito_primer_encuentro"
+    },
+
+    "sevro_prueba": {
+      "tipo": "narracion",
+      "texto": "Le encargas una misión imposible: infiltrarse en el campamento de Casa Apolo y traerte el nombre de su Primus antes del amanecer.\n\nSe desvanece en la oscuridad sin una palabra.\nDos horas después regresa con el nombre... y con las sandalias del Primus colgando de su cinturón.\n\nSevro au Barca sonríe con todos los dientes.\n— ¿Suficiente prueba?",
+      "efectos": { "prestigio": 15 },
+      "siguiente": "tito_primer_encuentro"
+    },
+
+    "sevro_rechazado": {
+      "tipo": "narracion",
+      "texto": "Sevro asiente una sola vez. Sin rencor visible, sin súplica.\n— Cometes un error —dice, y desaparece entre las sombras.\n\nLo verás de lejos durante días, siempre solo, siempre sobreviviendo.\nAlguna parte de ti sabe que lo has desaprovechado.",
+      "siguiente": "tito_primer_encuentro"
+    },
+
+    "tito_primer_encuentro": {
+      "tipo": "narracion",
+      "texto": "Tito au Ladros es todo lo que el Instituto quiere que sea un Dorado: grande, brutal, sin piedad.\n\nLo encuentras en el patio de piedra con tres prisioneros de Casa Ceres arrodillados frente a él.\nNo los está interrogando. Los está humillando — haciéndoles cargar rocas hasta que caen, golpeándolos cuando tropiezan.\n\nLos hombres de Casa Marte observan y ríen.\nAlgunos no ríen, pero tampoco hablan.\n\nTito te ve. Sus ojos se estrechan.\n— El nuevo héroe ha llegado. ¿Vienes a enseñarme cómo se trata a los prisioneros, Andromedus?",
+      "siguiente": "tito_decision"
+    },
+
+    "tito_decision": {
+      "tipo": "eleccion",
+      "texto": "Los prisioneros te miran. Los hombres de Marte te miran. Tito te mira.\nCada segundo que no actúas, él gana terreno.",
+      "opciones": [
+        {
+          "texto": "Confrontarlo directamente. Que todos vean quién manda aquí.",
+          "condicion": { "stat": "fuerza_rojo", "op": ">", "valor": 20 },
+          "efectos": { "prestigio": 25, "conflicto_interno": -8, "flag": "tito_derrotado" },
+          "siguiente": "tito_confrontacion"
+        },
+        {
+          "texto": "Manipularlo. Elogiarlo frente a todos y luego reencuadrarlo hacia tus propios fines.",
+          "efectos": { "prestigio": 15, "conflicto_interno": 12, "flag": "tito_aliado" },
+          "siguiente": "tito_manipulacion"
+        },
+        {
+          "texto": "Ignorarlo por ahora. El momento equivocado puede costarte todo.",
+          "efectos": { "prestigio": -10, "conflicto_interno": 20 },
+          "siguiente": "tito_ignorado"
+        }
+      ]
+    },
+
+    "tito_confrontacion": {
+      "tipo": "narracion",
+      "texto": "Caminas hacia Tito sin apresurarte. Cada paso calculado.\nLa multitud se abre.\n\n— Suéltalos —dices en voz baja. Lo suficientemente baja para que tenga que acercarse para oírte.\n\nCuando lo hace, ya es demasiado tarde. Le has quitado el terreno sin que lo note.\n\nTito intenta empujarte. Lo desvías. Le ofreces la salida que todo bravucón necesita: la posibilidad de retroceder sin perder la cara.\n— Tenemos cosas más importantes que hacer que romper a hombres que podrían servirnos.\n\nSilencio. Y luego Tito suelta a los prisioneros.\n\nCasa Marte ha visto quién piensa más allá del siguiente golpe.",
+      "efectos": { "prestigio": 10 },
+      "siguiente": "tito_secreto"
+    },
+
+    "tito_manipulacion": {
+      "tipo": "narracion",
+      "texto": "— Tito es el mejor luchador que he visto en este Instituto —dices en voz alta, y sus hombres asienten con entusiasmo.\n\nTito te mira con suspicacia, pero el elogio público es una trampa difícil de esquivar.\n\n— Precisamente por eso —continúas— necesitamos que use esa fuerza donde importa: en las fronteras, no aquí dentro. Los prisioneros como mano de obra nos dan ventaja sobre doce Casas.\n\nTito no está convencido. Pero tampoco puede rechazar el argumento sin quedar como impulsivo.\nLos prisioneros son conducidos a trabajos forzados. No es justicia, pero es supervivencia.",
+      "efectos": { "prestigio": 5, "conflicto_interno": 8 },
+      "siguiente": "tito_secreto"
+    },
+
+    "tito_ignorado": {
+      "tipo": "narracion",
+      "texto": "Te das la vuelta y te vas.\n\nTito ríe — una risa para que todos la oigan.\nLos hombres de Casa Marte lo registran: tú viste la brutalidad y no hiciste nada.\n\nEsa noche, en el silencio del campamento, escuchas los golpes continuar.\nEl sonido se aloja en tu pecho como una piedra de las minas.\n\nEres Dorado ahora. Recuérdalo. Recuérdalo bien.",
+      "efectos": { "conflicto_interno": 15, "prestigio": -5 },
+      "siguiente": "tito_secreto"
+    },
+
+    "tito_secreto": {
+      "tipo": "narracion",
+      "texto": "Es Sevro quien te lo dice, y solo a ti, en el umbral de la noche.\n\nHa seguido a Tito. Lo ha visto quitarse las botas y frotar las cicatrices de sus pies — cicatrices de la forma equivocada, demasiado irregulares para ser de duelos o entrenamiento.\n\nCicatrices de trabajo. Cicatrices de las minas.\n\n— Es Rojo —susurra Sevro, y en su voz no hay burla. Solo el filo de una verdad que cambia todo.\n\nTito. El hombre que humilla prisioneros. El hombre que lidera por el miedo.\nUno de los tuyos.\n\nEl suelo bajo tus pies ya no es el mismo.",
+      "siguiente": "tito_secreto_decision"
+    },
+
+    "tito_secreto_decision": {
+      "tipo": "eleccion",
+      "texto": "Sabes la verdad. Sevro espera tu decisión. El campamento duerme.",
+      "opciones": [
+        {
+          "texto": "Revelar su secreto a Casa Marte. Si miente sobre lo que es, no merece protección.",
+          "efectos": { "prestigio": 20, "conflicto_interno": -20, "flag": "tito_secreto_revelado" },
+          "siguiente": "tito_secreto_revelado"
+        },
+        {
+          "texto": "Guardarlo. Confrontar a Tito en privado: sois del mismo color, o deberíais serlo.",
+          "efectos": { "prestigio": 5, "conflicto_interno": 25, "flag": "tito_secreto_guardado" },
+          "siguiente": "tito_secreto_guardado"
+        },
+        {
+          "texto": "Usarlo como palanca. Convertirlo en aliado o destruirlo — que él elija.",
+          "efectos": { "prestigio": 10, "conflicto_interno": 10, "flag": "tito_aliado" },
+          "siguiente": "tito_secreto_palanca"
+        }
+      ]
+    },
+
+    "tito_secreto_revelado": {
+      "tipo": "narracion",
+      "texto": "Lo anuncias ante el círculo interior de Casa Marte.\nTito lo niega — con convicción, con furia.\nPero Sevro tiene las pruebas.\n\nEl círculo condena a Tito. No a muerte — eso lo decides tú — sino al ostracismo.\nSe marcha solo al amanecer, sin Casa, sin nombre en el Instituto.\n\nCasa Marte te mira como si por fin comprendieran quién eres.\nTú los miras y te preguntas si algún día comprenderás quién eres tú.\n\nHas traicionado a uno de los tuyos. Por el juego. Por la victoria.\nEo no podría mirarte. O quizás sí — quizás esto es exactamente para lo que te mandó aquí.",
+      "efectos": { "prestigio": 15 },
+      "siguiente": "aulladores_formacion"
+    },
+
+    "tito_secreto_guardado": {
+      "tipo": "narracion",
+      "texto": "Lo encuentras solo, antes del amanecer.\n\n— Sé lo que eres —le dices sin preámbulo.\nTito se tensa. Su mano va a su arma.\n\n— Y no voy a decírselo a nadie. Pero tienes que parar. Los prisioneros, la brutalidad... tienes que parar.\n\nHay un silencio largo y roto. Tito te mira como si buscara la trampa.\n— ¿Por qué? —pregunta al fin.\n\nNo respondes. No hay respuesta que no lo delate todo.\nPero Tito para. Incompletamente, imperfectamente — para.\n\nAhora cargáis el mismo secreto, y eso os une de una manera que ninguno de los dos eligió.",
+      "efectos": { "conflicto_interno": 10 },
+      "siguiente": "aulladores_formacion"
+    },
+
+    "tito_secreto_palanca": {
+      "tipo": "narracion",
+      "texto": "Lo llevas ante Sevro y ante el amanecer, y le pones la elección delante como se pone un cuchillo en una mesa.\n\n— Eres Rojo. Yo soy Rojo. Sevro... Sevro es algo aparte.\nPuedes seguir siendo lo que eres aquí — el verdugo de los prisioneros, el hombre que los nuestros odiarán — o puedes seguir de verdad.\n\nTito te mira durante un tiempo que parece durar años.\n— ¿Seguirte adónde?\n\n— Hacia arriba.\n\nNo es una alianza de confianza. Es una alianza de necesidad y secreto compartido.\nPor ahora, es suficiente.",
+      "efectos": { "prestigio": 8, "conflicto_interno": 5 },
+      "siguiente": "aulladores_formacion"
+    },
+
+    "aulladores_formacion": {
+      "tipo": "narracion",
+      "texto": "Los convocas al anochecer, en el claro donde el viento marciano golpea más fuerte.\n\nNo son muchos: Sevro, tres voluntarios que eligieron quedarse cuando pudieron marcharse, y tú.\nLos mirás uno a uno. No son los más fuertes de Casa Marte. No son los más nobles.\nSon los que eligieron lealtad sobre miedo, y esa elección los hace más peligrosos que cualquier campeón de duelos.\n\nSevro lleva una piel de lobo sobre los hombros.\nTe mira, y en sus ojos hay algo que no has visto en ningún Dorado hasta ahora:\nExpectativa. Fe. La clase de fe que no se compra.\n\n— Los Aulladores —anuncias, y el viento se lleva las palabras hacia las estrellas.",
+      "efectos": { "prestigio": 20, "conflicto_interno": 10, "flag": "aulladores_fundados" },
+      "siguiente": "aulladores_juramento"
+    },
+
+    "aulladores_juramento": {
+      "tipo": "dialogo",
+      "personaje": "Sevro au Barca",
+      "texto": "Prometemos no marchar con los ejércitos.\nPrometemos no pelear con honor en campos abiertos.\nPrometemos no pedir gloria ni corona ni nombre en las canciones.\n\nPrometemos ir donde otros no irán.\nPrometemos hacer lo que otros no harán.\nPrometemos morir por quien lleve este estandarte...\n\ny prometemos aullar cuando todo lo demás guarde silencio.",
+      "efectos": { "prestigio": 10 },
+      "siguiente": "prisioneros_decision"
+    },
+
+    "prisioneros_decision": {
+      "tipo": "eleccion",
+      "texto": "Casa Minerva ha caído en una emboscada de los Aulladores. Doce estudiantes capturados, atados, esperando su destino en el borde del campamento.\n\nTus hombres esperan la orden. En el Instituto, hay dos tradiciones para los capturados: esclavitud o liberación condicional.\nTú conoces una tercera.",
+      "opciones": [
+        {
+          "texto": "Tratarlos como esclavos. Mano de obra es mano de obra, y el Instituto premia la dureza.",
+          "efectos": { "prestigio": 15, "conflicto_interno": -15, "flag": "prisioneros_como_esclavos" },
+          "siguiente": "prisioneros_resultado_esclavos"
+        },
+        {
+          "texto": "Tratarlos como aliados potenciales. Ofrecerles elección: servir libremente o marchar.",
+          "condicion": { "stat": "conflicto_interno", "op": ">", "valor": 30 },
+          "efectos": { "prestigio": 18, "conflicto_interno": 20, "flag": "prisioneros_como_aliados" },
+          "siguiente": "prisioneros_resultado_aliados"
+        },
+        {
+          "texto": "Liberarlos sin condiciones. El miedo que siembras al capturarlos ya cumplió su función.",
+          "efectos": { "prestigio": 8, "conflicto_interno": 15, "flag": "prisioneros_como_aliados" },
+          "siguiente": "prisioneros_resultado_libres"
+        }
+      ]
+    },
+
+    "prisioneros_resultado_esclavos": {
+      "tipo": "narracion",
+      "texto": "Los encadenáis — no con hierro, sino con trabajos y órdenes.\nSirven el campamento. Cavan, cargan, obedecen.\n\nCasa Marte se fortalece visiblemente.\nLos demás Aulladores aprueban con silencio.\n\nSevro no dice nada, pero esa noche te mira de una manera que no habías visto antes:\ncomo si calculara la distancia entre lo que eres y lo que esperaba que fueras.",
+      "efectos": { "prestigio": 5 },
+      "siguiente": "c2_final"
+    },
+
+    "prisioneros_resultado_aliados": {
+      "tipo": "narracion",
+      "texto": "Los desatas tú mismo, uno a uno.\n\n— Podéis marchar —les dices— o podéis quedaros. Si os quedáis, no seréis esclavos ni prisioneros. Seréis parte de algo diferente.\nNo os prometemos gloria. Os prometemos que vuestras decisiones serán vuestras.\n\nCinco se quedan. Siete se marchan. Los siete que se marchan hablarán de esto en Casa Minerva.\nLa reputación de Casa Marte cambia esa noche: ya no eres solo otro depredador del Instituto.\n\nEres una incógnita. Y las incógnitas son lo más peligroso de todo.",
+      "efectos": { "prestigio": 12, "conflicto_interno": 8 },
+      "siguiente": "c2_final"
+    },
+
+    "prisioneros_resultado_libres": {
+      "tipo": "narracion",
+      "texto": "Los sueltas en silencio, sin condiciones, sin discurso.\n\nTe miran como si esperaran una trampa.\n— ¿Por qué? —pregunta la que parece ser su líder, una chica de cabello oscuro con los nudillos en carne viva.\n\n— Porque puedo —respondes.\n\nSe marchan al amanecer. Pero la líder se detiene una vez, se vuelve, y te mira durante un largo momento.\nNo dice nada. Pero algo en ese gesto vale más que diez victorias en campo abierto.",
+      "efectos": { "prestigio": 10, "conflicto_interno": 10 },
+      "siguiente": "c2_final"
+    },
+
+    "c2_final": {
+      "tipo": "narracion",
+      "texto": "El Capítulo II termina.\n\nLos Aulladores existen. Son pocos, son raros, son los tuyos.\nSevro au Barca camina a tu sombra como si siempre hubiera pertenecido allí.\n\nEl Instituto sigue girando a tu alrededor — doce Casas, doce banderas, doce formas de ganar y de perder.\nPero algo ha cambiado en la textura del juego.\n\nYa no juegas solo para sobrevivir.\nJuegas para demostrar que otra forma de ganar es posible.\n\nO quizás solo te lo cuentas a ti mismo para poder dormir.\nEn las minas de Lykos, Eo te cantaba cuando la oscuridad era demasiado.\nAquí no hay canciones.\nSolo el viento, y el aullido distante que empieza a sonar como un nombre.",
+      "siguiente": ""
+    }
+
+  }
+}

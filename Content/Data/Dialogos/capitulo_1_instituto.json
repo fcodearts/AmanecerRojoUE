@@ -1,0 +1,248 @@
+{
+  "version": "1.0",
+  "escenas": {
+
+    "intro": {
+      "tipo": "narracion",
+      "texto": "Han tallado tu cuerpo. Han borrado tu historia.\nEres Darrow au Andromedus, Dorado de Hierro.\nPero en lo más profundo, sigues siendo Darrow de Lykos.\nUn Rojo. El esposo de Eo. Un hombre con una misión.\n\nEl Instituto te espera.",
+      "siguiente": "el_paso_oscuridad"
+    },
+
+    "el_paso_oscuridad": {
+      "tipo": "narracion",
+      "texto": "La oscuridad es absoluta. El aire huele a piedra fría y metal.\nTus ojos Dorados se adaptan. Ves la habitación.\n\nUna mesa. Dos sillas. Un cuchillo entre las dos.",
+      "siguiente": "julian_aparece"
+    },
+
+    "julian_aparece": {
+      "tipo": "narracion",
+      "texto": "Al otro lado de la mesa está sentado Julian au Belona.\nPelo rubio, ojos dorados, manos que tiemblan levemente.\nApenas un chico. Como tú... como aparentas ser.",
+      "siguiente": "archimago_habla"
+    },
+
+    "archimago_habla": {
+      "tipo": "dialogo",
+      "personaje": "Archimago",
+      "texto": "Solo uno de vosotros saldrá de esta habitación.",
+      "siguiente": "julian_suplica"
+    },
+
+    "julian_suplica": {
+      "tipo": "dialogo",
+      "personaje": "Julian au Belona",
+      "texto": "No quiero hacerte daño. Mi hermano Casio está aquí. Si muero... no sé qué hará.\n\n¿Hay otra manera?",
+      "siguiente": "el_paso_decision"
+    },
+
+    "el_paso_decision": {
+      "tipo": "eleccion",
+      "texto": "Sus manos se acercan al cuchillo, pero se detienen. Te mira.",
+      "opciones": [
+        {
+          "texto": "Tomar el cuchillo. Terminar esto.",
+          "efectos": { "prestigio": 15, "conflicto_interno": -5, "flag": "julian_muerto" },
+          "siguiente": "muerte_julian"
+        },
+        {
+          "texto": "Hablar con Julian. Buscar otra salida.",
+          "efectos": { "prestigio": 5, "conflicto_interno": 15, "flag": "julian_vivo" },
+          "siguiente": "misericordia_julian"
+        },
+        {
+          "texto": "Esperar. Observar. No actuar aún.",
+          "efectos": { "prestigio": 3, "conflicto_interno": 8, "flag": "julian_vivo" },
+          "siguiente": "espera_julian"
+        }
+      ]
+    },
+
+    "muerte_julian": {
+      "tipo": "narracion",
+      "texto": "Lo haces rápido. Más rápido de lo que merece.\nJulian au Belona cae sin un grito.\n\nEn la oscuridad, algo dentro de ti muere también.\nNo la bestia que necesitas ser. Algo más pequeño. Más humano.\n\nLas puertas se abren. La luz entra.\nHas pasado El Paso.",
+      "siguiente": "instituto_llegada"
+    },
+
+    "misericordia_julian": {
+      "tipo": "dialogo",
+      "personaje": "Darrow",
+      "texto": "No voy a matarte. Y tú no vas a matarme.\nEncontraremos otra salida.",
+      "siguiente": "misericordia_resultado"
+    },
+
+    "misericordia_resultado": {
+      "tipo": "narracion",
+      "texto": "Julian te mira incrédulo. Luego, lentamente, asiente.\nEsperáis juntos en silencio. Las horas pasan.\n\nAl amanecer, la puerta se abre. El Archimago os mira a los dos.",
+      "siguiente": "archimago_reaccion"
+    },
+
+    "espera_julian": {
+      "tipo": "narracion",
+      "texto": "Esperáis. Minutos que se vuelven horas.\nJulian no ataca. Tú tampoco.\nAl alba, la puerta se abre.",
+      "siguiente": "archimago_reaccion"
+    },
+
+    "archimago_reaccion": {
+      "tipo": "dialogo",
+      "personaje": "Archimago",
+      "texto": "Interesante.",
+      "siguiente": "instituto_llegada"
+    },
+
+    "instituto_llegada": {
+      "tipo": "narracion",
+      "texto": "El Instituto se alza ante ti: una fortaleza de granito rojo\nsobre las llanuras de Marte. Banderas de doce Casas ondean\nen el viento marciano.\n\nCasa Marte. Casa Minerva. Casa Apolo.\nY las nueve restantes, tus futuras presas o aliadas.",
+      "siguiente": "archimago_discurso"
+    },
+
+    "archimago_discurso": {
+      "tipo": "dialogo",
+      "personaje": "Archimago",
+      "texto": "Aquí no hay Dorados. Solo hay ganadores y perdedores.\nSolo hay Primii... y el resto.",
+      "siguiente": "asignacion_casa"
+    },
+
+    "asignacion_casa": {
+      "tipo": "narracion",
+      "texto": "El Archimago asigna las Casas por sorteo.\n\nDarrow au Andromedus — Casa MARTE.",
+      "efectos": { "prestigio": 10 },
+      "siguiente": "campamento_minerva"
+    },
+
+    "campamento_minerva": {
+      "tipo": "narracion",
+      "texto": "Los días pasan. El Instituto comienza.\n\nEn las colinas del norte, una pequeña banda de Minerva\nacampa sin defensa aparente.\n\nUna trampa... o una oportunidad.",
+      "siguiente": "minerva_decision"
+    },
+
+    "minerva_decision": {
+      "tipo": "eleccion",
+      "texto": "¿Qué haces?",
+      "opciones": [
+        {
+          "texto": "Atacar el campamento de Minerva ahora.",
+          "efectos": { "conflicto_interno": -3 },
+          "siguiente": "minerva_ataque"
+        },
+        {
+          "texto": "Observar y esperar el momento justo.",
+          "efectos": { "prestigio": 25, "conflicto_interno": -3 },
+          "siguiente": "minerva_espera"
+        },
+        {
+          "texto": "Enviar un mensajero: proponer alianza.",
+          "efectos": { "prestigio": 12, "conflicto_interno": 10, "flag": "alianza_minerva" },
+          "siguiente": "minerva_alianza"
+        }
+      ]
+    },
+
+    "minerva_ataque": {
+      "tipo": "narracion",
+      "texto": "El combate es rápido y brutal.\nMinerva no esperaba la agresión directa.\nCasa Marte avanza.",
+      "efectos": { "prestigio": 20 },
+      "siguiente": "casio_encuentro"
+    },
+
+    "minerva_espera": {
+      "tipo": "narracion",
+      "texto": "Observas durante días. Aprendes sus patrones.\nCuando atacas, es quirúrgico. Perfecto.\n\nRoque de Minerva se rinde. Ve algo en ti que no esperaba ver.",
+      "efectos": { "flag": "roque_capturado" },
+      "siguiente": "casio_encuentro"
+    },
+
+    "minerva_alianza": {
+      "tipo": "dialogo",
+      "personaje": "Roque au Fabii",
+      "texto": "Una alianza. Inusual. Los demás te llamarán débil.\nPero los débiles no construyen imperios...\n¿O sí?",
+      "efectos": { "flag": "roque_aliado" },
+      "siguiente": "casio_encuentro"
+    },
+
+    "casio_encuentro": {
+      "tipo": "narracion",
+      "texto": "Casio te encuentra solo junto al río de piedra.\nSu espada ya está desenvainada. Sus ojos, fuego puro.",
+      "siguiente": "casio_acusacion"
+    },
+
+    "casio_acusacion": {
+      "tipo": "dialogo",
+      "personaje": "Casio au Belona",
+      "texto": "Sé lo que le hiciste a Julian. O lo que no hiciste para salvarlo.\n\nNo importa lo que realmente pasó.\nEn mi mente, tú eres el culpable.",
+      "siguiente": "casio_decision"
+    },
+
+    "casio_decision": {
+      "tipo": "eleccion",
+      "texto": "Casio espera tu respuesta con la espada levantada.",
+      "opciones": [
+        {
+          "texto": "Desenvainar. Si quiere guerra, que la tenga.",
+          "efectos": { "conflicto_interno": -10 },
+          "siguiente": "casio_combate"
+        },
+        {
+          "texto": "Decirle la verdad sobre El Paso.",
+          "efectos": { "prestigio": 8, "conflicto_interno": 12 },
+          "siguiente": "casio_verdad"
+        },
+        {
+          "texto": "Absorber su ira. Dejar que golpee primero.",
+          "efectos": { "prestigio": 5, "conflicto_interno": 18, "flag": "casio_aliado" },
+          "siguiente": "casio_absorbe"
+        },
+        {
+          "texto": "Usar la Forma de la Garza para desarmarlo sin herirlo.",
+          "condicion": { "stat": "tecnica_dorado", "op": ">", "valor": 30 },
+          "efectos": { "prestigio": 30, "conflicto_interno": 15, "flag": "casio_aliado" },
+          "siguiente": "casio_garza"
+        }
+      ]
+    },
+
+    "casio_combate": {
+      "tipo": "narracion",
+      "texto": "El combate es feroz. Casio es el mejor espadachín que has visto.\nSus ojos prometen que esto no ha terminado.\n\nPero hoy, caes tú.",
+      "efectos": { "prestigio": -20 },
+      "siguiente": "final_capitulo"
+    },
+
+    "casio_verdad": {
+      "tipo": "narracion",
+      "texto": "Le cuentas todo. Julian. La oscuridad. El cuchillo.\nCasio escucha. Su espada no baja... pero su mano tiembla.\n\n— Mientes —dice al fin. Pero ya no suena tan seguro.",
+      "siguiente": "final_capitulo"
+    },
+
+    "casio_absorbe": {
+      "tipo": "narracion",
+      "texto": "Dejas que su primer golpe te alcance. El dolor es real.\nPero también lo es lo que ves después:\nCasio mirando su propia mano, sorprendido de sí mismo.",
+      "siguiente": "casio_absorbe_dialogo"
+    },
+
+    "casio_absorbe_dialogo": {
+      "tipo": "dialogo",
+      "personaje": "Casio au Belona",
+      "texto": "¿Por qué no te defiendes?",
+      "siguiente": "darrow_responde_casio"
+    },
+
+    "darrow_responde_casio": {
+      "tipo": "dialogo",
+      "personaje": "Darrow",
+      "texto": "Porque entiendo tu dolor.",
+      "siguiente": "final_capitulo"
+    },
+
+    "casio_garza": {
+      "tipo": "narracion",
+      "texto": "Ejecutas la Forma de la Garza: tres movimientos, su espada en el suelo.\nCasio te mira sin comprender cómo ha ocurrido.\n\nNo hay sangre. Pero la lección es inequívoca.\nLentamente, recoge su espada. No vuelve a atacar.",
+      "siguiente": "final_capitulo"
+    },
+
+    "final_capitulo": {
+      "tipo": "narracion",
+      "texto": "El Capítulo I termina.\n\nEl Instituto ha comenzado a moldearte.\nO tú has comenzado a moldearlo a él.\n\nAún es difícil saber cuál de las dos cosas es más peligrosa.",
+      "siguiente": ""
+    }
+
+  }
+}

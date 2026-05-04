@@ -1,0 +1,372 @@
+{
+  "version": "1.0",
+  "escenas": {
+
+    "c3_inicio": {
+      "tipo": "narracion",
+      "texto": "Llevas tres días solo.\n\nNo fue un plan. Fue una emboscada de Casa Apolo en la quebrada del norte, y cuando la niebla marciana se cerró y los Aulladores se dispersaron para reagruparse, tú ya estabas en el suelo.\n\nUna lanza en el costado derecho. No profunda — pero infectada, o algo peor. Cada respiración es un recuerdo de que los cuerpos Dorados también se rompen.\n\nArrastras el hombro contra la roca volcánica y dejas que la frialdad de la piedra haga lo que no puede hacer tu voluntad: callar el dolor.\n\nLos Aulladores no saben dónde estás. Nadie sabe dónde estás.\nEn el Instituto, eso es casi siempre sinónimo de muerte.",
+      "siguiente": "mustang_encuentro"
+    },
+
+    "mustang_encuentro": {
+      "tipo": "narracion",
+      "texto": "La ves antes de oírla, y eso ya es suficiente para que te suba la mano a la empuñadura de la espada.\n\nAlta para ser mujer. El cabello castaño recogido sin artificio, como quien no tiene tiempo que perder en gestos. Viste pieles de un animal que no reconoces — capturado por ella, sin duda, no entregado por ningún proctor. Lleva un arco corto a la espalda y una bolsa que pesa demasiado para estar vacía.\n\nTe observa desde diez pasos de distancia con la misma expresión que usarías para calcular el ángulo de un tiro difícil: sin miedo, sin piedad, sin nada innecesario.\n\nNo desenfunda. No huye. Inclina levemente la cabeza, como si confirmara algo que ya sabía.\n\nVirginia au Augusto. Casa Minerva. La hija del Archigobernador de Marte.\nEl Instituto la llama Mustang.\nAhora mismo, te llama 'superviviente', y lo hace como si no estuviera del todo segura de que el término sea preciso.",
+      "siguiente": "mustang_primera_palabra"
+    },
+
+    "mustang_primera_palabra": {
+      "tipo": "dialogo",
+      "personaje": "Mustang",
+      "texto": "Esa herida tiene dos días más de lo que crees.\nSi no la tratas hoy, mañana no te despertarás para lamentarlo.\n\nPuedo curarte o puedo dejarte aquí.\nAmbas opciones tienen consecuencias, y las dos son tuyas, no mías.\n\n¿Qué decides?",
+      "siguiente": "mustang_cura_decision"
+    },
+
+    "mustang_cura_decision": {
+      "tipo": "eleccion",
+      "texto": "Mustang te mira sin impaciencia. Sin sentimentalismo. Te está ofreciendo una transacción, y espera que la evalúes como tal.",
+      "opciones": [
+        {
+          "texto": "Aceptar. Necesitas la ayuda y negarlo sería estupidez, no orgullo.",
+          "efectos": { "prestigio": 5, "conflicto_interno": 8, "flag": "mustang_cura_aceptada" },
+          "siguiente": "mustang_curacion"
+        },
+        {
+          "texto": "Aceptar, pero a cambio de información. Si te cura, tú le cuentas lo que sabes del Chacal.",
+          "efectos": { "prestigio": 10, "conflicto_interno": 5, "flag": "mustang_cura_aceptada" },
+          "siguiente": "mustang_cura_intercambio"
+        },
+        {
+          "texto": "Rechazarla. No confías en nadie de otra Casa, y menos en alguien que te encontró demasiado fácil.",
+          "efectos": { "prestigio": -5, "conflicto_interno": -10, "flag": "mustang_cura_rechazada" },
+          "siguiente": "mustang_rechazo_resultado"
+        }
+      ]
+    },
+
+    "mustang_cura_intercambio": {
+      "tipo": "narracion",
+      "texto": "Mustang te mira un momento largo.\n\nNo parece ofendida. Parece interesada, que es peor — quiere decir que la has evaluado correctamente como alguien que negocia.\n\n— Trato justo —dice, y se arrodilla junto a ti sin más ceremonia.\n\nSus manos trabajan con precisión. Nada de consuelos, nada de 'va a doler'. Solo competencia, limpia y sin adornos.\nY mientras trabaja, habláis. Ese intercambio de información se convierte en algo diferente.\nAlgo que ninguno de los dos habría llamado conversación si alguien los estuviera observando.\nPero lo es.",
+      "efectos": { "prestigio": 5 },
+      "siguiente": "mustang_curacion"
+    },
+
+    "mustang_rechazo_resultado": {
+      "tipo": "narracion",
+      "texto": "Mustang no discute.\n\nTe mira durante tres segundos exactos — los cuentas — y luego asiente una sola vez.\n\n— Bien —dice, y da media vuelta.\n\nDa cinco pasos. Se detiene sin girarse.\n— La herida está envenenada con savia de espino marciano. No con veneno de combate. Accidental, supongo. Tienes quizás seis horas antes de que el dolor sea tan intenso que no puedas pensar. Cuatro más antes de que el Instituto tenga un cadáver nuevo.\n\nDeja algo en el suelo sin mirarte. Un frasco pequeño, de arcilla oscura.\n— La elección sigue siendo tuya.\n\nY se marcha. Te quedas mirando el frasco.\nEl orgullo es un lujo que se permite quien tiene salud.",
+      "efectos": { "conflicto_interno": 15 },
+      "siguiente": "mustang_curacion"
+    },
+
+    "mustang_curacion": {
+      "tipo": "narracion",
+      "texto": "Sus manos no tiemblan.\n\nLimpia la herida con algo que quema como acero al rojo y explica qué hace y por qué — no para tranquilizarte, sino porque explicar es su forma de pensar en voz alta. Ata el vendaje con los nudos de alguien que aprendió a hacerlo sola, en campo abierto, sin que nadie se lo enseñara dos veces.\n\nMientras trabaja, habláis.\n\nNo de la guerra. No del Instituto como juego. De cosas más peligrosas: por qué estáis aquí, qué creéis que significa ganar, qué dejáis atrás cuando os ponéis las máscaras que este lugar exige.\n\nMustang no habla de emociones. Habla de hechos y de lógica. Pero los hechos que elige revelan más de ella que cualquier confesión.\n\nA la hora, la fiebre ha bajado lo suficiente para que puedas sentarte.\nA las dos horas, la miráis como si os hubierais conocido antes.\nNinguno de los dos lo dice en voz alta.\nAlgunas verdades son más cómodas como silencios.",
+      "efectos": { "accion": "curar_herida" },
+      "siguiente": "mustang_pregunta_peligrosa"
+    },
+
+    "mustang_pregunta_peligrosa": {
+      "tipo": "dialogo",
+      "personaje": "Mustang",
+      "texto": "Llevas el Instituto como si fuera una segunda piel que todavía te aprieta en los bordes.\n\nLos demás Dorados nacieron aquí, o eso creen. Se mueven como si las reglas fueran parte de su cuerpo. Tú las calculas. Cada gesto, cada palabra — hay un instante antes de que actúes en que puedo verte decidir qué haría un Dorado.\n\nNo te estoy acusando de nada. Solo te pregunto algo que me interesa:\n¿Quién eras antes de que te convirtieran en esto?\n\nY no me digas el nombre de tu familia. Los nombres son lo primero que aprendemos a mentir.",
+      "siguiente": "darrow_respuesta_mustang"
+    },
+
+    "darrow_respuesta_mustang": {
+      "tipo": "eleccion",
+      "texto": "La pregunta de Mustang queda en el aire entre los dos. Ella no aparta los ojos. No los aparta nunca.",
+      "opciones": [
+        {
+          "texto": "Desviar la pregunta con habilidad. Darle una verdad pequeña que no revele nada esencial.",
+          "efectos": { "prestigio": 8, "conflicto_interno": 12 },
+          "siguiente": "darrow_desvio_respuesta"
+        },
+        {
+          "texto": "Decirle una verdad parcial — que había alguien antes de esto, alguien que amabas, alguien que perdiste.",
+          "condicion": { "stat": "conflicto_interno", "op": ">", "valor": 50 },
+          "efectos": { "prestigio": 12, "conflicto_interno": 20, "flag": "mustang_sabe_algo" },
+          "siguiente": "darrow_verdad_parcial"
+        },
+        {
+          "texto": "Contraatacar con otra pregunta. Ella sabe algo que no dice — también tú tienes derecho a saberlo.",
+          "efectos": { "prestigio": 10, "conflicto_interno": 5 },
+          "siguiente": "darrow_contraataque_pregunta"
+        }
+      ]
+    },
+
+    "darrow_desvio_respuesta": {
+      "tipo": "narracion",
+      "texto": "— Era alguien que creía que las reglas del mundo eran naturales —dices—. Y luego aprendí que alguien las había escrito.\n\nMustang te escucha con atención. Espera más. Cuando no llega, asiente.\n\n— Eso es lo más honesto que le he escuchado decir a alguien en este Instituto —dice—. Y al mismo tiempo, es una respuesta perfectamente diseñada para no decir nada real.\n\nSonríe. Solo con los ojos.\n— Te sigo respetando. Solo toma nota de que lo he notado.",
+      "siguiente": "mustang_alianza_propuesta"
+    },
+
+    "darrow_verdad_parcial": {
+      "tipo": "narracion",
+      "texto": "Hay un silencio antes de hablar. No lo llenas.\n\n— Había alguien —dices al fin—. Antes del Instituto. Antes del Tallado. Alguien que me hacía saber quién era incluso cuando el resto del mundo me decía que era menos de lo que merecía ser.\n\nMustang no responde inmediatamente. Tú tampoco añades nada. Algunos nombres no se dicen en voz alta — no porque duelan menos, sino porque el dolor que tienen merece más que palabras en un campo de batalla.\n\nElla te mira de una manera diferente cuando reanudáis la marcha. Como si hubiera recalibrado algo.\n\n— Eso es lo que el Instituto teme de la gente como tú —dice finalmente—. Que tengáis razones reales.\nLas razones reales son las únicas que no se pueden comprar.",
+      "efectos": { "prestigio": 5 },
+      "siguiente": "mustang_alianza_propuesta"
+    },
+
+    "darrow_contraataque_pregunta": {
+      "tipo": "narracion",
+      "texto": "— Antes de responder eso —dices—, dime por qué una hija del Archigobernador está sola en una quebrada curando a un enemigo del Instituto.\n\nMustang hace una pausa tan breve que casi no es pausa.\n\n— Porque 'enemigo' es una etiqueta que el Instituto pone para que dejemos de pensar —responde—. Y porque sola me muevo más rápido que con cien personas que me deben lealtad pero no me deben honestidad.\n\nOs miráis. Ninguno ha respondido la pregunta del otro. Ambos lo sabéis.\nY de alguna manera eso os pone en pie de igualdad de una manera que ninguna alianza formal podría.",
+      "siguiente": "mustang_alianza_propuesta"
+    },
+
+    "mustang_alianza_propuesta": {
+      "tipo": "dialogo",
+      "personaje": "Mustang",
+      "texto": "Hay algo que no sabe nadie más en este Instituto todavía.\nHe pasado tres semanas cartografiando los movimientos del Chacal.\nSus patrones, sus campamentos, sus cadenas de suministro.\n\nTú tienes los Aulladores. Yo tengo la información.\nSin tu fuerza de campo, mi inteligencia es académica.\nSin mi inteligencia, tus Aulladores están actuando a ciegas.\n\nNo te estoy pidiendo que me obedezcas ni que confíes en mí completamente.\nTe estoy proponiendo algo más sencillo y más difícil a la vez:\nque cada uno de nosotros sea más útil al otro de lo que podría ser solo.\n\n¿Tienes un argumento contra eso?",
+      "siguiente": "mustang_alianza_decision"
+    },
+
+    "mustang_alianza_decision": {
+      "tipo": "eleccion",
+      "texto": "Mustang espera tu respuesta con la misma calma con que te curó. Sin urgencia. Sabe cuál es la respuesta lógica. Lo que espera ver es qué clase de hombre eres tú.",
+      "opciones": [
+        {
+          "texto": "Aceptar la alianza. Su lógica es impecable y la alternativa es seguir solo.",
+          "efectos": { "prestigio": 15, "conflicto_interno": 10, "flag": "mustang_aliada" },
+          "siguiente": "mustang_alianza_sellada"
+        },
+        {
+          "texto": "Aceptar, pero negociar los términos: información compartida en igualdad, no solo de su parte.",
+          "efectos": { "prestigio": 18, "conflicto_interno": 8, "flag": "mustang_aliada" },
+          "siguiente": "mustang_alianza_negociada"
+        },
+        {
+          "texto": "Desconfiar. Una alianza ofrecida demasiado limpiamente siempre tiene un precio oculto.",
+          "efectos": { "prestigio": 5, "conflicto_interno": -5 },
+          "siguiente": "mustang_alianza_rechazada"
+        }
+      ]
+    },
+
+    "mustang_alianza_sellada": {
+      "tipo": "narracion",
+      "texto": "— Trato hecho —dices.\n\nMustang extiende la mano. No es un gesto ornamental — es el gesto de alguien que no firma contratos porque su palabra es suficiente, y quiere que la tuya también lo sea.\n\nOs la estrecháis.\n\nNinguno sonríe. Sonreír habría sido demasiado.\nPero hay algo en ese silencio después del apretón que vale más que cualquier ceremonia.",
+      "siguiente": "chacal_rumores"
+    },
+
+    "mustang_alianza_negociada": {
+      "tipo": "narracion",
+      "texto": "— Pero en igualdad —añades—. Lo que yo sé, tú lo sabes. Lo que tú sabes, yo lo sé.\nNada de jerarquía de información. Si esto funciona, funciona entre iguales.\n\nMustang te estudia. Un momento.\n— Inusual —dice finalmente—. La mayoría de los hombres en el Instituto habrían aceptado sin condiciones, luego habrían buscado la manera de quedar por encima.\nTú pides igualdad por adelantado. O eres más honesto de lo que el Instituto produce normalmente... o eres más listo.\n\n— Trato hecho —dice.\n\nOs estrecháis la mano. Iguales. O al menos, lo más cerca de iguales que dos personas con secretos son capaces de ser.",
+      "siguiente": "chacal_rumores"
+    },
+
+    "mustang_alianza_rechazada": {
+      "tipo": "narracion",
+      "texto": "— Dame tiempo para pensarlo —dices.\n\nMustang asiente sin cambiar de expresión. No está herida. No está sorprendida.\n— Razonable —dice—. Pero el tiempo que tomemos en decidir es tiempo que el Chacal usa en consolidar.\n\nOs separáis. Ella no te presiona. Eso, extrañamente, hace que confíes en ella más que si lo hubiera hecho.\n\nTres horas después, cuando los datos que te ha dado resultan ser exactos hasta el último detalle, la buscas tú.\n\n— Trato hecho —le dices.\nElla no dice 'ya lo sabía'.\nEso también lo anota en tu favor.",
+      "efectos": { "flag": "mustang_aliada" },
+      "siguiente": "chacal_rumores"
+    },
+
+    "chacal_rumores": {
+      "tipo": "narracion",
+      "texto": "Las noticias llegan con un mensajero de Casa Vulcano: un estudiante con la cara de alguien que ha visto algo que no sabe cómo procesar.\n\nEl Chacal ha capturado estudiantes de tres Casas en las últimas cuarenta y ocho horas. No los ha matado. No los ha esclavizado. Los ha llevado a una fortaleza en las colinas del este y los interroga, uno a uno, durante horas.\n\nLos que regresan — los pocos que regresa — tienen los ojos de alguien que ha aprendido algo sobre sí mismos que habría preferido no saber. No hay marcas visibles. Solo esa mirada.\n\nAdrio au Augusto no tortura por placer. Tortura por datos.\nLo que es infinitamente peor.\n\nYa sabe dónde están dos de tus campamentos secundarios.\nProbablemente sabe más.",
+      "siguiente": "chacal_revelacion"
+    },
+
+    "chacal_revelacion": {
+      "tipo": "narracion",
+      "texto": "Mustang tarda dos días en volver, y cuando lo hace, trae algo consigo que cambia el peso del aire.\n\nUn fragmento de comunicación interceptado: cifrado Próctor, el tipo que solo deben usar entre los maestros del Instituto. Ella lo descifró sola, en una noche.\n\nNo hay forma de suavizarlo: los Próctores están enviando información al Chacal en tiempo real. Posiciones de tropas, reservas de suministros, planes de ataque que aún no se han ejecutado. El hombre que gestiona el flujo de información es un Próctor llamado Plinio — el mismo que distribuyó las asignaciones de Casa en el primer día.\n\nEl Instituto no es un campo de batalla entre iguales.\nNunca lo fue.\nEl Chacal lleva ventaja desde el principio porque el juego estaba diseñado para que la tuviera.\n\nY de repente, todo lo que has construido — los Aulladores, las alianzas, los sacrificios — se reenmarca.\nHas estado ganando a pesar de las reglas, no dentro de ellas.",
+      "siguiente": "chacal_revelacion_dialogo"
+    },
+
+    "chacal_revelacion_dialogo": {
+      "tipo": "dialogo",
+      "personaje": "Mustang",
+      "texto": "No es corrupción en el sentido vulgar. No lo hacen por dinero ni por miedo.\nLo hacen porque creen que el Chacal es la opción correcta para ganar el Instituto y eso les parece suficiente para justificar cualquier cosa.\n\nEso es lo más peligroso de todo: la gente que traiciona por convicción es mucho más difícil de detener que la gente que traiciona por cobardía.\n\nTenemos las pruebas. Tenemos los registros.\nLo que no tenemos es el lugar donde pronunciarlas para que importen.\nEl Olimpo es ese lugar — el centro de transmisión de los Próctores, la torre desde donde controlan el Instituto entero.\nSi llegamos allí y transmitimos esto por su propia red...\nevery student in the Institute oirá la confesión de sus propios maestros.\n\nSe acabó el juego amañado.\nO lo acabamos nosotros, o seguimos jugando en un tablero que nunca fue nuestro.",
+      "siguiente": "olimpo_decision"
+    },
+
+    "olimpo_decision": {
+      "tipo": "eleccion",
+      "texto": "Mustang te ha entregado el mapa del Olimpo y los registros de transmisión. Tienes las pruebas. La pregunta es cuándo y cómo usarlas.",
+      "opciones": [
+        {
+          "texto": "Atacar el Olimpo ahora con los Aulladores. Velocidad sobre preparación — el Chacal no sabe que tenemos las pruebas.",
+          "condicion": { "flag": "aulladores_fundados" },
+          "efectos": { "prestigio": 20, "conflicto_interno": 5, "flag": "olimpo_asalto_directo" },
+          "siguiente": "olimpo_preparacion"
+        },
+        {
+          "texto": "Esperar y acumular fuerza. Pedir apoyo a Casio antes del asalto.",
+          "condicion": { "flag": "casio_aliado" },
+          "efectos": { "prestigio": 15, "conflicto_interno": 10, "flag": "olimpo_con_refuerzo" },
+          "siguiente": "olimpo_espera_refuerzo"
+        },
+        {
+          "texto": "Intentar exponer las pruebas públicamente sin asalto — filtrarlas a estudiantes clave de varias Casas.",
+          "efectos": { "prestigio": 10, "conflicto_interno": 18, "flag": "olimpo_via_diplomacia" },
+          "siguiente": "olimpo_exposicion_fallida"
+        }
+      ]
+    },
+
+    "olimpo_espera_refuerzo": {
+      "tipo": "narracion",
+      "texto": "Mandas un mensajero a Casio au Belona.\n\nLa respuesta llega antes del amanecer siguiente: un solo nudo en la cuerda del mensajero — el código de los Aulladores que él no debería conocer, pero conoce.\nCasio ha estado observando. Como siempre.\n\n— Estaré allí —dice el mensaje—. Pero entro por el lado oeste. No por lealtad. Por el mismo motivo que tú: porque el juego amañado es una ofensa para todos, no solo para los que pierden por él.\n\nCon Casio en el flanco, la operación tiene posibilidades reales.\nMustang revisa el plan durante toda la noche. Cuando termina, no dice 'está bien'.\nDice 'está hecho'. Que es diferente.",
+      "efectos": { "prestigio": 8 },
+      "siguiente": "olimpo_preparacion"
+    },
+
+    "olimpo_exposicion_fallida": {
+      "tipo": "narracion",
+      "texto": "Envías los registros a cuatro líderes de otras Casas. Esperas.\n\nTres los ignoran — en el Instituto, las pruebas sin poder detrás no son pruebas, son blancos.\nEl cuarto va directo a los Próctores.\n\nUna hora después, el Chacal sabe que tienes los registros.\nLa ventaja se ha evaporado.\n\nMustang te mira cuando llegas con la noticia. No dice 'te lo dije'. Dice:\n— El poder nunca cede ante la evidencia. Solo cede ante otro poder.\nVamos a hacer esto de la manera que debía hacerse desde el principio.\n\nEl asalto al Olimpo ya no es una elección. Es la única salida.",
+      "efectos": { "conflicto_interno": 10 },
+      "siguiente": "olimpo_preparacion"
+    },
+
+    "olimpo_preparacion": {
+      "tipo": "narracion",
+      "texto": "Los Aulladores se congregan en el claro de los tres pinos, donde el viento viene del norte y nadie puede acercarse sin que lo oigas.\n\nSevro despliega el mapa del Olimpo sobre una roca plana y empieza a hablar antes de que nadie le dé permiso.\n\n— Hay cuatro puntos de entrada —dice, y señala con el filo de su cuchillo—. Dos están guardados, uno está trampeado, y el cuarto... el cuarto están tan seguros de que nadie lo intentaría que básicamente lo han dejado abierto. Es el acceso de carga. Demasiado estrecho para un ejército, perfecto para nosotros que somos, y cito, 'ridículamente pocos y estamos claramente perturbados'.\n\nUno de los Aulladores más nuevos pregunta si eso es un elogio o una evaluación táctica.\n— Las dos cosas —dice Sevro, y vuelve al mapa—. Entramos por grupos de dos. Sin señal de ataque hasta que Darrow esté en la sala de transmisión. Y si alguien muere, que sea de manera que cuente una buena historia.\n\nMustang no sonríe. Pero tamborilea una vez con el dedo sobre el mapa, que en ella equivale a una ovación.",
+      "siguiente": "olimpo_asalto"
+    },
+
+    "olimpo_asalto": {
+      "tipo": "narracion",
+      "texto": "El Olimpo no es una fortaleza en el sentido clásico — es una torre de comunicaciones con pretensiones arquitectónicas. Granito marciano oscuro, antenas de transmisión en la cúpula, y la arrogancia de quienes construyen en alto porque creen que la altura equivale a seguridad.\n\nEntráis al amanecer, cuando los turnos de guardia se cruzan y el cansancio tiene más peso que el protocolo.\n\nSevro desactiva las trampas del pasillo central con una velocidad que sugiere que las colocó él mismo en otra vida. Los Aulladores se mueven en silencio, ropa oscura contra piedra oscura, la única luz la de las antorchas que no tocan.\n\nHay tres guardias en el nivel dos. Los neutralizáis sin sangre derramada — atados, amordazados, depositados en una sala lateral.\n\nEn el nivel tres, hay más.\n\nEl combate es breve y feroz. Mustang pelea a tu derecha con una eficiencia brutal, sin ornamento, como quien resuelve un problema matemático con el cuerpo. Sevro pelea a tu izquierda y aúlla — realmente aúlla — cada vez que derriba a alguien.\n\nLlegas a la sala de transmisión. La puerta cede.\nLa red entera del Instituto está frente a ti: pantallas, registros, el canal abierto que los Próctores usan para controlar cada movimiento de cada Casa.\n\nTienes las pruebas en la mano.\nSolo necesitas la voz de uno de ellos.",
+      "efectos": { "prestigio": 25, "flag": "olimpo_tomado" },
+      "siguiente": "proctores_rendicion"
+    },
+
+    "proctores_rendicion": {
+      "tipo": "dialogo",
+      "personaje": "Proctor",
+      "texto": "¡Basta! ¡Basta, os lo suplico!\n\nOs doy lo que queréis. Todo lo que queréis.\n\n... Sí. Sí, es cierto. Hemos estado transmitiendo información a Adrio au Augusto durante semanas. Posiciones, recursos, planes de ataque. Todo en tiempo real. Las órdenes venían de arriba — de más arriba de lo que puedo decir aquí.\n\nNos dijeron que era necesario. Que el Chacal era el candidato que la Sociedad necesitaba que ganara el Instituto. Que garantizar su victoria era garantizar estabilidad.\n\nNo lo cuestionamos. Eso... eso es lo que no puedo explicaros. Que no lo cuestionamos.\n\nLo estáis oyendo todos. Estáis oyendo todo esto. Que sirva de algo.",
+      "efectos": { "prestigio": 30, "flag": "proctores_expuestos" },
+      "siguiente": "chacal_confrontacion"
+    },
+
+    "chacal_confrontacion": {
+      "tipo": "narracion",
+      "texto": "Llega diez minutos después de la transmisión.\n\nAdrio au Augusto no corre. Camina. Entra por la puerta principal del Olimpo como si le perteneciera, con cuatro de sus mejores estudiantes a su espalda, y sube al nivel de transmisión sin apresurarse.\n\nEs más joven de lo que su reputación sugiere. Más joven y más quieto. El tipo de quietud que no es paz sino ausencia — como si hubiera eliminado de sí mismo todo lo que no fuera eficiencia.\n\nSus ojos son exactamente los de Mustang pero vaciados de algo que en ella todavía existe. Te escanea de la cabeza a los pies con la expresión de alguien inventariando una herramienta.\n\nSus escoltas se detienen. El Chacal sigue avanzando solo hasta que hay solo cuatro pasos entre vosotros.\n\nMustang está a tu derecha con la mano en el arco.\nSevro está detrás, y por primera vez desde que lo conoces, no aúlla.",
+      "siguiente": "chacal_palabras"
+    },
+
+    "chacal_palabras": {
+      "tipo": "dialogo",
+      "personaje": "El Chacal",
+      "texto": "Has ganado el Olimpo. Has expuesto a los Próctores. Ha sido eficiente.\n\nNo me interesa la moralidad de lo que hicieron — era una ventaja estructural, y yo la usé. Si tuvieras acceso a lo mismo, habrías hecho lo mismo. No me digas que no.\n\nLo que sí me interesa es esto: has demostrado que puedes pensar más allá del tablero que te dieron. Eso es escaso en el Instituto. No lo desaproveches.\n\nMi hermana se ha unido a ti. Eso es una evaluación, viniendo de ella. No un error.\n\nAsí que tengo una pregunta. Solo una.\n¿Vienes a matarme, a capturarme, o vienes a ver si puedo serte útil?\n\nSé honesto. Te lo agradezco más que la cortesía.",
+      "siguiente": "chacal_decision_final"
+    },
+
+    "chacal_decision_final": {
+      "tipo": "eleccion",
+      "texto": "El Chacal te mira sin urgencia. Sin miedo visible. Con la atención de alguien que está genuinamente interesado en la respuesta.",
+      "opciones": [
+        {
+          "texto": "Capturarlo. Es demasiado peligroso libre, demasiado valioso muerto.",
+          "efectos": { "prestigio": 20, "conflicto_interno": 5, "flag": "chacal_capturado" },
+          "siguiente": "chacal_capturado_resultado"
+        },
+        {
+          "texto": "Perdonarlo como muestra de justicia — que el Instituto sepa que hay una forma distinta de ganar.",
+          "condicion": { "stat": "conflicto_interno", "op": ">", "valor": 60 },
+          "efectos": { "prestigio": 15, "conflicto_interno": 20, "flag": "chacal_perdonado" },
+          "siguiente": "chacal_perdonado_resultado"
+        },
+        {
+          "texto": "Usar la Forma de la Garza para inmovilizarlo sin herirlo — demostrar control total sin necesitar su muerte.",
+          "condicion": { "stat": "tecnica_dorado", "op": ">", "valor": 30 },
+          "efectos": { "prestigio": 35, "conflicto_interno": 10, "flag": "chacal_capturado" },
+          "siguiente": "chacal_garza_resultado"
+        },
+        {
+          "texto": "Matarlo. Algunos problemas no se encadenan — se eliminan.",
+          "efectos": { "prestigio": 10, "conflicto_interno": -15, "flag": "chacal_muerto" },
+          "siguiente": "chacal_muerto_resultado"
+        }
+      ]
+    },
+
+    "chacal_capturado_resultado": {
+      "tipo": "narracion",
+      "texto": "— Capturarte —dices.\n\nEl Chacal asiente una sola vez. No con resignación — con la actitud de quien ha recibido una respuesta que encaja en sus modelos.\n\n— Razonable —dice, y extiende las manos.\n\nSus escoltas no atacan. Lo miran a él, y cuando no les da señal de resistencia, bajan sus armas.\n\nMustang ata a su hermano sin decir una palabra. Sus manos no tiemblan.\nEl Chacal la observa mientras lo hace.\n— Buena elección —le dice, en voz baja, casi como si fuera un cumplido.\n\nElla termina el nudo y se pone de pie.\nNo le responde.",
+      "siguiente": "victoria_instituto"
+    },
+
+    "chacal_perdonado_resultado": {
+      "tipo": "narracion",
+      "texto": "— Me has preguntado qué vengo a hacer —dices—. Ninguna de las tres opciones que propones. Vengo a decirte que el juego ha terminado, que has perdido, y que te marchas libre.\n\nEl Chacal no reacciona de inmediato. Es la primera vez que lo ves genuinamente sorprendido.\n\n— ¿Por qué?\n\n— Porque matarte sería fácil. Capturarte sería útil. Perdonarte delante de todo el Instituto... eso es algo que nadie olvidará.\n\nUn silencio largo y tenso.\n— Eso es político, no moral —dice el Chacal.\n— Las dos cosas pueden ser lo mismo —respondes.\n\nSe marcha sin sus escoltas. Sin mirar atrás.\nMustang espera a que se pierda de vista.\n— Acabas de crear el enemigo más peligroso que tendrás en tu vida —dice.\n— Ya lo era antes —respondes.\n— Ahora te debe algo. Que es peor.",
+      "efectos": { "conflicto_interno": 5 },
+      "siguiente": "victoria_instituto"
+    },
+
+    "chacal_garza_resultado": {
+      "tipo": "narracion",
+      "texto": "Ejecutas la Forma de la Garza antes de que el Chacal termine de procesar tu intención de moverte.\n\nTres pasos. Una torsión. La presión exacta en el punto correcto del codo derecho.\nAdrio au Augusto está en el suelo en tres segundos, inmovilizado, sin una sola herida.\n\nSus escoltas dan un paso al frente. Los Aulladores dan dos.\n\n— Decid a vuestro señor —dice Sevro, con una calma que nunca usa — que la Forma de la Garza tiene diecisiete variaciones. Darrow conoce las diecisiete.\n\nLas escoltas retroceden.\n\nEl Chacal te mira desde el suelo. Ni furia ni humillación. Solo esa atención calculada, ahora dirigida hacia arriba.\n— Impresionante —dice.\n— Suficiente —respondes.",
+      "efectos": { "prestigio": 10 },
+      "siguiente": "victoria_instituto"
+    },
+
+    "chacal_muerto_resultado": {
+      "tipo": "narracion",
+      "texto": "Es rápido. Más rápido de lo que merece.\n\nLas escoltas del Chacal se dispersan sin que nadie les dé la orden. En el Instituto, la lealtad tiene una vida útil y vence exactamente cuando la persona a quien se debe ya no puede garantizar nada.\n\nMustang no dice nada durante mucho tiempo.\nCuando habla, no es un reproche — es un inventario.\n\n— Era mi hermano —dice.\n— Lo sé.\n— Sigue siendo la decisión correcta para ganar esto.\n— Lo sé.\n— Solo quería que lo supieras tú también.\n\nNadie en el Olimpo celebra. Algunos de los Aulladores te miran de una manera que no tenían antes — no miedo, no admiración. Algo entre los dos.",
+      "efectos": { "conflicto_interno": 10 },
+      "siguiente": "victoria_instituto"
+    },
+
+    "victoria_instituto": {
+      "tipo": "narracion",
+      "texto": "El Instituto ha terminado.\n\nLa transmisión desde el Olimpo llegó a cada Casa, cada campamento, cada rincón de las llanuras marcianas donde estudiantes Dorados jugaban a construir imperios en miniatura. La confesión del Próctor no fue solo una revelación — fue un detonante. Casas enteras que habían capitulado ante el Chacal revocaron su rendición. La red que había construido durante meses se desintegró en horas.\n\nCasa Marte arriará sus banderas sobre doce fortalezas antes de que caiga el sol.\n\nEl Archimago — viejo, impasible, con los ojos de alguien que ha visto demasiados Institutos para sorprenderse — te mira desde el centro del patio de piedra cuando bajas del Olimpo. No aplaude. Los Archimago no aplauden.\nSolo dice:\n— Primii.\n\nUna palabra. Tu nombre nuevo en este lugar.\n\nLos Aulladores aúllan. Sevro el primero, con toda la capacidad pulmonar de alguien que pesa menos de lo que debería y compensa con ferocidad. El sonido sube por las torres de granito y se pierde en el cielo rojo de Marte.\n\nMustang está a tu lado. No aúlla. No necesita hacerlo.\nTe mira con los ojos de alguien que ha apostado por algo y ha ganado, y que sabe que ganar es solo el principio.",
+      "efectos": { "prestigio": 40 },
+      "siguiente": "nero_oferta"
+    },
+
+    "nero_oferta": {
+      "tipo": "dialogo",
+      "personaje": "Nerón au Augusto",
+      "texto": "Darrow au Andromedus.\n\nHe observado el Instituto durante veinte años. He visto a ciento doce Primii tomar ese título. La mayoría fueron exactamente lo que el Instituto diseña: instrumentos perfectamente calibrados para las guerras que les asigne la Sociedad.\n\nTú has hecho algo diferente. Has expuesto una trampa que yo mismo aprobé.\n\nNo me disculpo. Los instrumentos poderosos requieren pruebas severas. Lo que no calculé es que un instrumento fuera capaz de romper el marco de la prueba misma.\n\nEso me indica que eres demasiado valioso para los fines habituales.\n\nTe ofrezco el puesto de lancero. Mi lancero. Entrarás en los círculos donde se toman las decisiones que mueven planetas. Aprenderás cómo funciona el poder real — no el que se ejerce en campos de batalla, sino el que se ejerce en salones donde nadie lleva armas porque no las necesitan.\n\nNo te estoy pidiendo lealtad. Te estoy ofreciendo una palanca.\nLo que hagas con ella... eso, por el momento, lo dejaré a tu criterio.\n\n¿Qué dice el Primii?",
+      "siguiente": "nero_decision"
+    },
+
+    "nero_decision": {
+      "tipo": "eleccion",
+      "texto": "Nerón au Augusto. El hombre que ejecutó a Eo. El Archigobernador de Marte. Te ofrece exactamente lo que necesitas para destruirlo desde dentro, envuelto en las palabras de quien te hace un favor.",
+      "opciones": [
+        {
+          "texto": "Aceptar ser su lancero. El camino al corazón del poder pasa por este hombre.",
+          "efectos": { "prestigio": 40, "conflicto_interno": -10, "flag": "lancero_de_nero" },
+          "siguiente": "nero_aceptado"
+        },
+        {
+          "texto": "Rechazar. No serás el arma de nadie — ni siquiera como estrategia.",
+          "efectos": { "prestigio": 15, "conflicto_interno": 15, "flag": "lancero_rechazado" },
+          "siguiente": "nero_rechazado"
+        },
+        {
+          "texto": "Negociar condiciones. Aceptar el puesto, pero con términos que preserven tu autonomía.",
+          "efectos": { "prestigio": 25, "conflicto_interno": 5, "flag": "lancero_de_nero" },
+          "siguiente": "nero_negociado"
+        }
+      ]
+    },
+
+    "nero_aceptado": {
+      "tipo": "narracion",
+      "texto": "— Acepto —dices.\n\nNerón no sonríe. Los hombres con ese tipo de poder no sonríen ante victorias pequeñas — guardan las sonrisas para algo que todavía no puedes imaginar.\n\nSolo asiente, lentamente, con la satisfacción del ajedrecista que acaba de colocar la pieza que necesitaba en el casillero correcto.\n\nSabes que él cree que te tiene.\nSabes que tú crees que lo tienes a él.\nAmbas cosas son probablemente ciertas al mismo tiempo.\n\nEso, en la Sociedad, se llama política.",
+      "siguiente": "c3_final"
+    },
+
+    "nero_rechazado": {
+      "tipo": "narracion",
+      "texto": "— No —dices. Solo eso.\n\nNerón te mira durante un tiempo largo sin que su expresión cambie.\n\n— Los hombres que rechazan palancas —dice al fin— suelen terminar siendo usados como palancas por otros.\n\n— Prefiero ese riesgo.\n\nOtro silencio.\n— Bien —dice, y hay algo en su voz que no es amenaza ni admiración. Es registro. Te ha anotado en alguna columna de su mente, y no sabes en cuál.\n\nTe marchas del Olimpo sin mirar atrás.\nMustang te alcanza en los escalones de granito.\n— Eso fue valiente o estúpido.\n— Probablemente las dos cosas.\n— En este mundo, la diferencia es mínima.",
+      "siguiente": "c3_final"
+    },
+
+    "nero_negociado": {
+      "tipo": "narracion",
+      "texto": "— Acepto — dices—. Pero en mis términos.\n\nNerón inclina levemente la cabeza. Solo un grado. El gesto de alguien que no concede a menudo, pero cuando lo hace, lo hace conscientemente.\n\n— Explícate.\n\n— Acceso real. No solo visibilidad. No seré un ornamento en tus salones — seré un agente que opera con información completa y margen de decisión propio. Si eso no está sobre la mesa, el título no vale nada para ninguno de los dos.\n\nNerón te evalúa durante un silencio calculado.\n— Más costoso de lo que esperaba —dice—. Acepto.\n\nHay dos lecturas posibles de esa respuesta: que valoras más de lo que pensaba, o que ya tenía en cuenta que lo pedirías.\n\nAmbas lecturas son inquietantes.\nLas dos son probablemente ciertas.",
+      "siguiente": "c3_final"
+    },
+
+    "c3_final": {
+      "tipo": "narracion",
+      "texto": "La cúpula del Olimpo tiene una ventana hacia el este que nadie usa porque no da a nada estratégico.\nSolo da a Marte.\n\nPiedra roja y cielo rojo y la línea del horizonte que siempre ha sido el límite del mundo conocido para alguien que nació en las minas de Lykos y nunca imaginó mirar desde aquí.\n\nPiensas en Eo.\n\nNo en la imagen de ella que has aprendido a usar como combustible — la de su cuerpo en el poste, la de la canción que le costó todo. Piensas en la imagen anterior: Eo cantando en la oscuridad de las minas porque la oscuridad era demasiado y alguien tenía que negarse a aceptarla.\n\nElla nunca supo que la escuchabas desde el túnel del lado.\nSiempre creyó que cantaba sola.\n\nTú llevas ese secreto igual que llevas el color de tu piel bajo la piel que te tallaron.\nEn algún lugar donde nadie puede verlo, eres todavía ese hombre en el túnel oscuro que escucha cantar a alguien que se niega a renunciar.\n\nEl Instituto ha terminado.\nMarte espera.\nEl viaje — el viaje real, el que importa — apenas comienza.\n\nAullas solo, en voz baja, hacia el horizonte rojo.\nNadie lo oye.\nEso no cambia nada.",
+      "siguiente": ""
+    }
+
+  }
+}
