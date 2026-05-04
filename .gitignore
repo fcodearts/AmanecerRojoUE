@@ -1,0 +1,28 @@
+# Unreal Engine 5 — archivos generados (no van al repo)
+Binaries/
+DerivedDataCache/
+Intermediate/
+Saved/
+Build/
+
+# Visual Studio
+.vs/
+*.VC.db
+*.opensdf
+*.sdf
+*.suo
+*.user
+
+# Archivos de solución (se regeneran desde .uproject)
+*.sln
+
+# Rider
+.idea/
+*.DotSettings.user
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Lo que SÍ va al repo:
+# Config/, Content/, Source/, Plugins/, *.uproject
