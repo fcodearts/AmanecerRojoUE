@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "ue5": {
+      "command": "python",
+      "args": ["C:\\Proyectos\\AmanecerRojo\\Tools\\mcp\\server.py"],
+      "env": {}
+    }
+  }
+}
